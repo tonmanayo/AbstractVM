@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/nfs/zfs-student-6/users/tmack/abstractvm/main.cpp" "/nfs/zfs-student-6/users/tmack/abstractvm/cmake-build-debug/CMakeFiles/abstractvm.dir/main.cpp.o"
+  "/nfs/zfs-student-6/users/tmack/abstractvm/main.cpp" "/nfs/zfs-student-6/users/tmack/abstractvm/CMakeFiles/abstractvm.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
