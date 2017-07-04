@@ -1,0 +1,4 @@
+push int32(16)
+qwe
+push int8(1223)
+exit

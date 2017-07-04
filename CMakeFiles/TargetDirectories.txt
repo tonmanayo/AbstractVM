@@ -1,3 +1,0 @@
-/nfs/zfs-student-6/users/tmack/abstractvm/CMakeFiles/rebuild_cache.dir
-/nfs/zfs-student-6/users/tmack/abstractvm/CMakeFiles/edit_cache.dir
-/nfs/zfs-student-6/users/tmack/abstractvm/CMakeFiles/abstractvm.dir
