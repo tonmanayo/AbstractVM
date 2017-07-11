@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/abstractvm.dir/main.cpp.o CMakeFiles/abstractvm.dir/VMFactory.cpp.o  -o abstractvm 
