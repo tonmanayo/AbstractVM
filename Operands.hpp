@@ -119,7 +119,7 @@ public:
                 throw std::runtime_error("Overflow of value !");
             ss << nVal;
         } else {
-	        long double nVal = std::stold(_string) + std::stold(rhs.toString());
+	        long double nVal = std::stold(_string) * std::stold(rhs.toString());
 	        if (checkTypeOverflow<long double>(nVal, type))
 		        throw std::runtime_error("Overflow of value !");
 	        ss << std::setprecision(_precision) << nVal;

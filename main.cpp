@@ -78,6 +78,7 @@ int main(int argc, char **argv) {
             std::cout << "print\n" << std::endl;
 	        stackstuff.print("", int8);
         } else if (std::strncmp(input.c_str(), "assert ", 7) == 0){
+
             int i8 = stoi(input.substr(input.find("t") + 2, input.length() - 1));
             std::cout << i8 << std::endl;
 	        stackstuff.assert(input.substr(input.find("t") + 2, input.length() - 1), int8);
