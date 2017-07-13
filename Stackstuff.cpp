@@ -41,10 +41,10 @@ void Stackstuff::dump(std::string value, eOperandType type) {
 }
 
 void Stackstuff::assert(std::string value, eOperandType type){
-	type = _type;
 	if (_stack.size() == 0)
 		throw std::runtime_error("Empty stack! Failed assert");
 	const IOperand* op = *(_stack.begin());
+	//std::cout << value << std::endl;
 	if (op->toString() != value)
 		throw std::runtime_error("Different Values! assert failed");
 	if (op->getType() != type)

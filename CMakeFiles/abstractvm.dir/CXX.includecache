@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -75,4 +75,6 @@ iostream
 -
 Stackstuff.hpp
 /home/tony/Projects/AbstractVM/Stackstuff.hpp
+math.h
+-
 

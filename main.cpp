@@ -5,6 +5,8 @@
 #include <fstream>
 #include <iostream>
 #include "Stackstuff.hpp"
+#include <math.h>
+
 
 
 
@@ -36,7 +38,6 @@ int main(int argc, char **argv) {
             int i8 = stoi(input.substr(input.find("(") + 1, input.find(")") - 1));
 	        stackstuff.push(input.substr(input.find("(") + 1, input.find(")") - 1), int8);
             std::cout << i8 << std::endl;
-
         } else if (std::strncmp(input.c_str(), "push int16(", 11) == 0){
             int i16 = stoi(input.substr(input.find("(") + 1, input.find(")") - 1));
 	        stackstuff.push(input.substr(input.find("(") + 1, input.find(")") - 1), int16);
@@ -78,10 +79,38 @@ int main(int argc, char **argv) {
             std::cout << "print\n" << std::endl;
 	        stackstuff.print("", int8);
         } else if (std::strncmp(input.c_str(), "assert ", 7) == 0){
-
-            int i8 = stoi(input.substr(input.find("t") + 2, input.length() - 1));
-            std::cout << i8 << std::endl;
-	        stackstuff.assert(input.substr(input.find("t") + 2, input.length() - 1), int8);
+	        if (std::strncmp(input.c_str(), "assert int8(", 12) == 0){
+		        int i7 = std::stoi(input.substr(input.find("(") + 1, input.find(")") - 1));
+		        std::stringstream ss;
+		        ss << i7;
+		        stackstuff.assert(ss.str(), int8);
+	        }
+	        else if (std::strncmp(input.c_str(), "assert int16(", 13) == 0){
+		        int i7 = std::stoi(input.substr(input.find("(") + 1, input.find(")") - 1));
+		        std::stringstream ss;
+		        ss << i7;
+		        stackstuff.assert(ss.str(), int16);
+	        }
+	        else if (std::strncmp(input.c_str(), "assert int32(", 13) == 0){
+		        int i7 = std::stoi(input.substr(input.find("(") + 1, input.find(")") - 1));
+		        std::stringstream ss;
+		        ss << i7;
+		        stackstuff.assert(ss.str(), int32);
+	        }
+	        else if (std::strncmp(input.c_str(), "assert float(", 13) == 0){
+		        float i7 = std::stof(input.substr(input.find("(") + 1, input.find(")") - 1));
+		        std::stringstream ss;
+		        ss << i7;
+		        stackstuff.assert(ss.str(), Float);
+	        }
+	        else if (std::strncmp(input.c_str(), "assert double(", 14) == 0){
+		        double i7 = std::stod(input.substr(input.find("(") + 1, input.find(")") - 1));
+		        std::stringstream ss;
+		        ss << i7;
+		        stackstuff.assert(ss.str(), Double);
+	        } else {
+		        std::cout << "incorrect input\n";
+	        }
         } else if (std::strncmp(input.c_str(), "exit", 4) == 0 && input.length() == 4){
             sEnd = true;
             std::cout << "exit\n" << std::endl;
