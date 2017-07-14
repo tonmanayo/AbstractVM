@@ -8,22 +8,12 @@
 Stackstuff::Stackstuff(std::string value )
 		: _value(value)
 {
-	_operations[0] = &Stackstuff::push;
-	_operations[1] = &Stackstuff::pop;
-	_operations[2] = &Stackstuff::dump;
-	_operations[3] = &Stackstuff::assert;
-	_operations[4] = &Stackstuff::add;
-	_operations[5] = &Stackstuff::sub;
-	_operations[6] = &Stackstuff::mul;
-	_operations[7] = &Stackstuff::div;
-	_operations[8] = &Stackstuff::mod;
-	_operations[9] = &Stackstuff::print;
-	_operations[10] = &Stackstuff::exit;
+
 }
 
 void    Stackstuff::push(std::string value, eOperandType type) {
 	_type = type;
-	_stack.push_front(_factory.createOperand(static_cast<eOperandType>(type), value));
+	_stack.push_front(_factory.createOperand(type, value));
 }
 
 void Stackstuff::pop(std::string value, eOperandType type) {

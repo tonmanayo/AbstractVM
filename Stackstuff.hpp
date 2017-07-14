@@ -16,7 +16,7 @@ class Stackstuff {
 private:
 	std::string                                     _value;
 	std::list<const IOperand*>                      _stack;
-	std::map<int, void(Stackstuff::*)(std::string, eOperandType)> _operations;
+	//std::map<int, void(Stackstuff::*)(std::string, eOperandType)> _operations;
 	VMFactory                                       _factory;
 	eOperandType                                    _type;
 
