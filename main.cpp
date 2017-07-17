@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 		}
 	}
 
-	while(!sEnd) {
+	while(1) {
 		if (argc == 1) {
 			getline(std::cin, input);
 			sCommands.push_back(input);
@@ -33,16 +33,15 @@ int main(int argc, char **argv) {
 			getline(myfile, input);
 			sCommands.push_back(input);
 		}
-		else {
-			std::cout << "argument error\n";
-			break;
-		}
-		if (input == ";;" || input == "exit")
-			sEnd = true;
+		if (input == ";;" )
+			break ;
 	}
     for(int i = 0; i < sCommands.size(); i++) {
-		if (sCommands.at(i) == ";;")
-			sEnd = true;
+		if (sCommands.at(i) == ";;") {
+            if (!sEnd)
+                std::cout << "no end of program! \n";
+            break;
+        }
 		else if (sCommands.at(i)[0] == ';' && sCommands.at(i)[1] != ';')
 			continue;
 		else if (std::strncmp(sCommands.at(i).c_str(), "push int8(", 10) == 0) {
@@ -71,44 +70,35 @@ int main(int argc, char **argv) {
 			stackstuff.mod("", int8);
 		} else if (std::strncmp(sCommands.at(i).c_str(), "print", 5) == 0 && sCommands.at(i).length() == 5) {
 			stackstuff.print("", int8);
-		} else if (std::strncmp(sCommands.at(i).c_str(), "assert ", 7) == 0) {
-			if (std::strncmp(sCommands.at(i).c_str(), "assert int8(", 12) == 0) {
-				int i8 = std::stoi(
-						sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
-				std::stringstream ss;
-				ss << i8;
-				stackstuff.assert(ss.str(), int8);
-			} else if (std::strncmp(sCommands.at(i).c_str(), "assert int16(", 13) == 0) {
-				int i16 = std::stoi(
-						sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
-				std::stringstream ss;
-				ss << i16;
-				stackstuff.assert(ss.str(), int16);
-			} else if (std::strncmp(sCommands.at(i).c_str(), "assert int32(", 13) == 0) {
-				int i32 = std::stoi(
-						sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
-				std::stringstream ss;
-				ss << i32;
-				stackstuff.assert(ss.str(), int32);
-			} else if (std::strncmp(sCommands.at(i).c_str(), "assert float(", 13) == 0) {
-				float ifloat = std::stof(
-						sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
-				std::stringstream ss;
-				ss << ifloat;
-				stackstuff.assert(ss.str(), Float);
-			} else if (std::strncmp(sCommands.at(i).c_str(), "assert double(", 14) == 0) {
-				double idbl = std::stod(
-						sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
-				std::stringstream ss;
-				ss << idbl;
-				stackstuff.assert(ss.str(), Double);
-			} else {
-				std::cout << "incorrect input\n";
-			}
+		} else if (std::strncmp(sCommands.at(i).c_str(), "assert int8(", 12) == 0) {
+			int i8 = std::stoi(sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
+			std::stringstream ss;
+			ss << i8;
+			stackstuff.assert(ss.str(), int8);
+        } else if (std::strncmp(sCommands.at(i).c_str(), "assert int16(", 13) == 0) {
+			int i16 = std::stoi(sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
+			std::stringstream ss;
+			ss << i16;
+			stackstuff.assert(ss.str(), int16);
+        } else if (std::strncmp(sCommands.at(i).c_str(), "assert int32(", 13) == 0) {
+			int i32 = std::stoi(sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
+            std::stringstream ss;
+			ss << i32;
+			stackstuff.assert(ss.str(), int32);
+        } else if (std::strncmp(sCommands.at(i).c_str(), "assert float(", 13) == 0) {
+			float ifloat = std::stof(sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
+            std::stringstream ss;
+			ss << ifloat;
+			stackstuff.assert(ss.str(), Float);
+        } else if (std::strncmp(sCommands.at(i).c_str(), "assert double(", 14) == 0) {
+			double idbl = std::stod(sCommands.at(i).substr(sCommands.at(i).find("(") + 1, sCommands.at(i).find(")") - 1));
+            std::stringstream ss;
+			ss << idbl;
+			stackstuff.assert(ss.str(), Double);
 		} else if (std::strncmp(sCommands.at(i).c_str(), "exit", 4) == 0 && sCommands.at(i).length() == 4) {
-			sEnd = true;
+            sEnd = true;
 		} else
-			std::cout << "incorrect input\n";
+			std::cout << "command: " << i << " is incorrect input\n";
 	}
     return 0;
 }
