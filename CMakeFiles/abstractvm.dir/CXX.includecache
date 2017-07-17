@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/tony/Projects/AbstractVM/IOperand.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/IOperand.hpp
 string
 -
 
-/home/tony/Projects/AbstractVM/Operands.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Operands.hpp
 IOperand.hpp
-/home/tony/Projects/AbstractVM/IOperand.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/IOperand.hpp
 VMFactory.hpp
-/home/tony/Projects/AbstractVM/VMFactory.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/VMFactory.hpp
 limits.h
 -
 iomanip
@@ -30,37 +30,37 @@ cfloat
 math.h
 -
 
-/home/tony/Projects/AbstractVM/Stackstuff.cpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Stackstuff.cpp
 iostream
 -
 Stackstuff.hpp
-/home/tony/Projects/AbstractVM/Stackstuff.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Stackstuff.hpp
 
-/home/tony/Projects/AbstractVM/Stackstuff.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Stackstuff.hpp
 map
 -
 list
 -
 VMFactory.hpp
-/home/tony/Projects/AbstractVM/VMFactory.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/VMFactory.hpp
 IOperand.hpp
-/home/tony/Projects/AbstractVM/IOperand.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/IOperand.hpp
 
-/home/tony/Projects/AbstractVM/VMFactory.cpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/VMFactory.cpp
 VMFactory.hpp
-/home/tony/Projects/AbstractVM/VMFactory.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/VMFactory.hpp
 Operands.hpp
-/home/tony/Projects/AbstractVM/Operands.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Operands.hpp
 
-/home/tony/Projects/AbstractVM/VMFactory.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/VMFactory.hpp
 cstdlib
 -
 map
 -
 IOperand.hpp
-/home/tony/Projects/AbstractVM/IOperand.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/IOperand.hpp
 
-/home/tony/Projects/AbstractVM/main.cpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/main.cpp
 iostream
 -
 sstream
@@ -74,7 +74,9 @@ fstream
 iostream
 -
 Stackstuff.hpp
-/home/tony/Projects/AbstractVM/Stackstuff.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Stackstuff.hpp
 math.h
+-
+vector
 -
 

@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/tony/Projects/AbstractVM/Stackstuff.cpp" "/home/tony/Projects/AbstractVM/CMakeFiles/abstractvm.dir/Stackstuff.cpp.o"
-  "/home/tony/Projects/AbstractVM/VMFactory.cpp" "/home/tony/Projects/AbstractVM/CMakeFiles/abstractvm.dir/VMFactory.cpp.o"
-  "/home/tony/Projects/AbstractVM/main.cpp" "/home/tony/Projects/AbstractVM/CMakeFiles/abstractvm.dir/main.cpp.o"
+  "/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Stackstuff.cpp" "/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/CMakeFiles/abstractvm.dir/Stackstuff.cpp.o"
+  "/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/VMFactory.cpp" "/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/CMakeFiles/abstractvm.dir/VMFactory.cpp.o"
+  "/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/main.cpp" "/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/CMakeFiles/abstractvm.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

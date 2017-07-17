@@ -1,4 +1,4 @@
-/home/tony/Downloads/clion-2017.1.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/tony/Projects/AbstractVM
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /nfs/zfs-student-6/users/tmack/Projects/AbstractVM
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/tony/Projects/AbstractVM
+-- Build files have been written to: /nfs/zfs-student-6/users/tmack/Projects/AbstractVM

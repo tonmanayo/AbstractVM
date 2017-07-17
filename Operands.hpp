@@ -37,8 +37,8 @@ public:
             case int8:   return (val > 127 || val < -128);
             case int16:  return (val > 32767 || val < -32768);
             case int32:  return (val > 2147483647 || val < -2147483648);
-            case Float:  return (val > FLT_MAX || val < FLT_MIN);
-            case Double: return (val > DBL_MAX || val < DBL_MIN);
+            case Float:  return (val > FLT_MAX || val < -FLT_MAX - 1);
+            case Double: return (val > DBL_MAX || val < -DBL_MAX - 1);
         }
         return true;
     }
@@ -76,17 +76,17 @@ public:
 	    int precision = _precision >= rhs.getPrecision() ? _precision: rhs.getPrecision();
 	    std::stringstream ss;
 
-        if (type < Float) {
-            long long nVal = std::stoll(_string) + std::stoll(rhs.toString());
-            if (checkTypeOverflow<long long>(nVal, type))
+        //if (type < Float) {
+            long double nVal = std::stold(_string) + std::stold(rhs.toString());
+            if (checkTypeOverflow<long double>(nVal, type))
                 throw std::runtime_error("Overflow of value !");
             ss << nVal;
-        } else {
-	        long double nVal = std::stold(_string) + std::stold(rhs.toString());
-	        if (checkTypeOverflow<long double>(nVal, type))
-		        throw std::runtime_error("Overflow of value !");
-	        ss << std::setprecision(_precision) << nVal;
-        }
+        //} else {
+//	        long double nVal = std::stold(_string) + std::stold(rhs.toString());
+//	        if (checkTypeOverflow<long double>(nVal, type))
+//		        throw std::runtime_error("Overflow of value !");
+//	        ss << std::setprecision(_precision) << nVal;
+//        }
         return (_factory->createOperand(type, ss.str()));
     }
 

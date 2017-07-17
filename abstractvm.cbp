@@ -8,104 +8,100 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/tony/Projects/AbstractVM"/>
+				<Option working_dir="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/tony/Projects/AbstractVM"/>
+				<Option working_dir="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/tony/Projects/AbstractVM"/>
+				<Option working_dir="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="abstractvm">
-				<Option output="/home/tony/Projects/AbstractVM/abstractvm" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tony/Projects/AbstractVM"/>
+				<Option output="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/abstractvm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.3.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 abstractvm"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 abstractvm"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="abstractvm/fast">
-				<Option output="/home/tony/Projects/AbstractVM/abstractvm" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tony/Projects/AbstractVM"/>
+				<Option output="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/abstractvm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.3.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 abstractvm/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tony/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 abstractvm/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/tony/Projects/AbstractVM/IOperand.hpp">
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/IOperand.hpp">
 			<Option target="abstractvm"/>
 		</Unit>
-		<Unit filename="/home/tony/Projects/AbstractVM/Operands.hpp">
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Operands.hpp">
 			<Option target="abstractvm"/>
 		</Unit>
-		<Unit filename="/home/tony/Projects/AbstractVM/Stackstuff.cpp">
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Stackstuff.cpp">
 			<Option target="abstractvm"/>
 		</Unit>
-		<Unit filename="/home/tony/Projects/AbstractVM/Stackstuff.hpp">
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Stackstuff.hpp">
 			<Option target="abstractvm"/>
 		</Unit>
-		<Unit filename="/home/tony/Projects/AbstractVM/VMFactory.cpp">
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/VMFactory.cpp">
 			<Option target="abstractvm"/>
 		</Unit>
-		<Unit filename="/home/tony/Projects/AbstractVM/VMFactory.hpp">
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/VMFactory.hpp">
 			<Option target="abstractvm"/>
 		</Unit>
-		<Unit filename="/home/tony/Projects/AbstractVM/main.cpp">
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/main.cpp">
 			<Option target="abstractvm"/>
 		</Unit>
-		<Unit filename="/home/tony/Projects/AbstractVM/CMakeLists.txt">
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
