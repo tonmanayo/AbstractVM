@@ -6,10 +6,7 @@
 #include "Stackstuff.hpp"
 
 Stackstuff::Stackstuff(std::string value )
-		: _value(value)
-{
-
-}
+		: _value(value) {}
 
 void    Stackstuff::push(std::string value, eOperandType type) {
 	_type = type;
@@ -86,6 +83,11 @@ void Stackstuff::div(std::string value, eOperandType type) {
 	_stack.pop_front();
 	const IOperand* op2 = *(_stack.begin());
 	_stack.pop_front();
+    if (op1->toString() == "0" || op2->toString() == "0"){
+        std::cout << "error trying to divide by 0\n";
+        return ;
+    }
+
 	const IOperand* r  = *op2 / *op1;
 	delete op1;
 	delete op2;

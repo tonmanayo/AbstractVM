@@ -36,10 +36,10 @@ int main(int argc, char **argv) {
 		if (input == ";;" )
 			break ;
 	}
-    for(int i = 0; i < sCommands.size(); i++) {
+    for(unsigned int i = 0; i < sCommands.size(); i++) {
 		if (sCommands.at(i) == ";;") {
             if (!sEnd)
-                std::cout << "no end of program! \n";
+                std::cout << "no exit command called before end of program! \n";
             break;
         }
 		else if (sCommands.at(i)[0] == ';' && sCommands.at(i)[1] != ';')

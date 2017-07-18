@@ -1,10 +1,22 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
 #IncludeRegexComplain: ^$
 
 #IncludeRegexTransform: 
+
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/ErrorHandle.cpp
+iostream
+-
+ErrorHandle.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/ErrorHandle.hpp
+
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/ErrorHandle.hpp
+exception
+-
+string
+-
 
 /nfs/zfs-student-6/users/tmack/Projects/AbstractVM/IOperand.hpp
 string
@@ -29,6 +41,8 @@ cfloat
 -
 math.h
 -
+ErrorHandle.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/ErrorHandle.hpp
 
 /nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Stackstuff.cpp
 iostream

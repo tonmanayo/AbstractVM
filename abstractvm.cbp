@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/ErrorHandle.cpp">
+			<Option target="abstractvm"/>
+		</Unit>
+		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/ErrorHandle.hpp">
+			<Option target="abstractvm"/>
+		</Unit>
 		<Unit filename="/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/IOperand.hpp">
 			<Option target="abstractvm"/>
 		</Unit>

@@ -3,5 +3,5 @@ project(abstractvm)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES main.cpp IOperand.hpp Operands.hpp VMFactory.cpp VMFactory.hpp Stackstuff.cpp Stackstuff.hpp)
+set(SOURCE_FILES main.cpp IOperand.hpp Operands.hpp VMFactory.cpp VMFactory.hpp Stackstuff.cpp Stackstuff.hpp ErrorHandle.cpp ErrorHandle.hpp)
 add_executable(abstractvm ${SOURCE_FILES} IOperand.hpp)
