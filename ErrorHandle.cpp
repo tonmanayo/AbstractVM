@@ -18,14 +18,3 @@ ErrorHandle::~ErrorHandle() {}
 const char *ErrorHandle::what() const throw() {
     return _message.c_str();
 }
-
-void ErrorHandle::underoverflow(int i) {
-    switch (i) {
-        case 1:
-            _message = "Overflow Error\n";
-        case 2:
-            _message = "underflow Error\n";
-        case 3:
-            _message = "Type error Error\n";
-    }
-}

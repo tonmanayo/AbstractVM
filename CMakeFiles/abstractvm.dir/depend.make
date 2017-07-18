@@ -15,6 +15,7 @@ CMakeFiles/abstractvm.dir/VMFactory.cpp.o: Operands.hpp
 CMakeFiles/abstractvm.dir/VMFactory.cpp.o: VMFactory.cpp
 CMakeFiles/abstractvm.dir/VMFactory.cpp.o: VMFactory.hpp
 
+CMakeFiles/abstractvm.dir/main.cpp.o: ErrorHandle.hpp
 CMakeFiles/abstractvm.dir/main.cpp.o: IOperand.hpp
 CMakeFiles/abstractvm.dir/main.cpp.o: Stackstuff.hpp
 CMakeFiles/abstractvm.dir/main.cpp.o: VMFactory.hpp

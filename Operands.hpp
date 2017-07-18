@@ -33,15 +33,38 @@ public:
     const Operands&operator=(const Operands&);
 
     template <typename C>
-    bool checkTypeOverflow(C val, eOperandType type) const {
+    bool checkTypeOverflow(C val, eOperandType type) const throw(){
+        bool i = false;
         switch (type) {
-            case int8: return (val > 127 || val < -128);
-            case int16: return (val > 32767|| val < -32768);
-            case int32: return (val > 2147483647 || val < -2147483648);
-            case Float: return (val > FLT_MAX || val < -FLT_MAX - 1);
-            case Double: return (val > DBL_MAX || val < -DBL_MAX - 1);
+            case int8:
+                if (val > 127 )
+                    throw ErrorHandle("Overflow of int8\n");
+                if (val < -128)
+                    throw ErrorHandle("Underflow of int8\n");
+            case int16:
+                if (val > 32767)
+                    throw ErrorHandle("Overflow of int16\n");
+                if (val < -32768)
+                    throw ErrorHandle("Under of int16\n");
+            case int32:
+                if (val > 2147483647)
+                    throw ErrorHandle("Overflow of int32\n");
+                if (val < -2147483648)
+                    throw ErrorHandle("Underflow of int32\n");
+            case Float:
+                if (val > FLT_MAX)
+                    throw ErrorHandle("Overflow of Float\n");
+                if (val < -FLT_MAX - 1)
+                    throw ErrorHandle("Underflow of Float\n");
+            case Double:
+                if (val > DBL_MAX)
+                    throw ErrorHandle("Overflow of Double\n");
+                if (val < -DBL_MAX - 1)
+                    throw ErrorHandle("Underflow of Double\n");
+            default:
+                i = true;
         }
-        return true;
+        return i;
     }
 
     int getPrecision(void) const{
@@ -56,23 +79,23 @@ public:
         try {
             if (type < Float) {
                 long long nVal = std::stoll(val);
-                if (checkTypeOverflow<long long>(nVal, type))
-                    throw std::out_of_range ("hello?");
+                if (!checkTypeOverflow<long long>(nVal, type))
+                    throw ;
                 _value = static_cast<T>(nVal);
                 std::stringstream c_out;
                 c_out << std::setprecision(precision) << nVal;
                 _string = c_out.str();
             } else {
                 long double nVal = std::stold(val);
-                if (checkTypeOverflow<long double>(nVal, type))
-                    throw std::runtime_error("Error creating value!");
+                if (!checkTypeOverflow<long long>(nVal, type))
+                    throw ;
                 _value = static_cast<T>(nVal);
                 std::stringstream c_out;
                 c_out << std::setprecision(precision) << nVal;
                 _string = c_out.str();
             }
         } catch (ErrorHandle errorHandle) {
-
+            std::cout << errorHandle.what();
         }
     }
 
@@ -84,20 +107,22 @@ public:
         //if (type < Float) {
         try {
             long double nVal = std::stold(_string) + std::stold(rhs.toString());
-            if (checkTypeOverflow<long double>(nVal, type))
-                throw ErrorHandle("Error creating value to big!\n");
+            if (!checkTypeOverflow<long long>(nVal, type))
+                throw ;
+
 
             ss << nVal;
-        } catch (ErrorHandle errorHandle) {
-                std::cout << errorHandle.what() << " overflow\n";
-        }
+
         //} else {
 //	        long double nVal = std::stold(_string) + std::stold(rhs.toString());
 //	        if (checkTypeOverflow<long double>(nVal, type))
 //		        throw std::runtime_error("Overflow of value !");
 //	        ss << std::setprecision(_precision) << nVal;
 //        }
-        return (_factory->createOperand(type, ss.str()));
+            return (_factory->createOperand(type, ss.str()));
+        } catch (ErrorHandle errorHandle) {
+            std::cout << errorHandle.what() << " overflow\n";
+        }
     }
 
     IOperand const *operator-( IOperand const &rhs ) const{
@@ -106,14 +131,14 @@ public:
 
         if (type < Float) {
             long long nVal = std::stoll(_string) - std::stoll(rhs.toString());
-            if (checkTypeOverflow<long long>(nVal, type))
-                throw std::runtime_error("Overflow of value !");
+            checkTypeOverflow<long long>(nVal, type);
+
             ss << nVal;
         } else {
 	        long double nVal = std::stold(_string) - std::stold(rhs.toString());
-	        if (checkTypeOverflow<long double>(nVal, type))
-		        throw std::runtime_error("Overflow of value !");
-	        ss << std::setprecision(_precision) << nVal;
+            checkTypeOverflow<long long>(nVal, type);
+
+            ss << std::setprecision(_precision) << nVal;
         }
 
         return (_factory->createOperand(type, ss.str()));
@@ -125,14 +150,14 @@ public:
 
         if (type < Float) {
             long long nVal = std::stoll(_string) * std::stoll(rhs.toString());
-            if (checkTypeOverflow<long long>(nVal, type))
-                throw std::runtime_error("Overflow of value !");
+            checkTypeOverflow<long long>(nVal, type);
+
             ss << nVal;
         } else {
 	        long double nVal = std::stold(_string) * std::stold(rhs.toString());
-	        if (checkTypeOverflow<long double>(nVal, type))
-		        throw std::runtime_error("Overflow of value !");
-	        ss << std::setprecision(_precision) << nVal;
+            checkTypeOverflow<long long>(nVal, type);
+
+            ss << std::setprecision(_precision) << nVal;
         }
         return (_factory->createOperand(type, ss.str()));
     }
@@ -143,14 +168,14 @@ public:
 
         if (type < Float) {
             long long nVal = std::stoll(_string) / std::stoll(rhs.toString());
-            if (checkTypeOverflow<long long>(nVal, type))
-                throw std::runtime_error("Overflow of value !");
+            checkTypeOverflow<long long>(nVal, type);
+
             ss << nVal;
         } else {
 	        long double nVal = std::stold(_string) / std::stold(rhs.toString());
-	        if (checkTypeOverflow<long double>(nVal, type))
-		        throw std::runtime_error("Overflow of value !");
-	        ss << std::setprecision(_precision) << nVal;
+            checkTypeOverflow<long long>(nVal, type);
+
+            ss << std::setprecision(_precision) << nVal;
         }
         return (_factory->createOperand(type, ss.str()));
     }
@@ -161,14 +186,14 @@ public:
 
         if (type < Float) {
             long long nVal = std::stoll(_string) % std::stoll(rhs.toString());
-            if (checkTypeOverflow<long long>(nVal, type))
-                throw std::runtime_error("Overflow of value !");
+            checkTypeOverflow<long long>(nVal, type);
+
             ss << nVal;
         } else {
 	        long double nVal = fmodl(std::stold(_string), std::stold(rhs.toString()));
-	        if (checkTypeOverflow<long double>(nVal, type))
-		        throw std::runtime_error("Overflow of value !");
-	        ss << std::setprecision(_precision) << nVal;
+            checkTypeOverflow<long long>(nVal, type);
+
+            ss << std::setprecision(_precision) << nVal;
         }
         return (_factory->createOperand(type, ss.str()));
     }

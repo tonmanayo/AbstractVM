@@ -14,7 +14,6 @@ public:
     explicit ErrorHandle(const char* message);
     explicit ErrorHandle(const std::string& message);
     virtual ~ErrorHandle();
-    void underoverflow(int i);
 
     virtual const char* what() const throw();
 private:

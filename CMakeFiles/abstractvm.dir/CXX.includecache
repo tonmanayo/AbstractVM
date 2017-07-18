@@ -89,6 +89,8 @@ iostream
 -
 Stackstuff.hpp
 /nfs/zfs-student-6/users/tmack/Projects/AbstractVM/Stackstuff.hpp
+ErrorHandle.hpp
+/nfs/zfs-student-6/users/tmack/Projects/AbstractVM/ErrorHandle.hpp
 math.h
 -
 vector
