@@ -38,7 +38,6 @@ public:
 	void    mod(std::string value, eOperandType type);
 	void    print(std::string value, eOperandType type);
 	void    exit(std::string value, eOperandType type);
-	void    end(std::string value, eOperandType type);
 
 	~Stackstuff();
 

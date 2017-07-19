@@ -4,6 +4,7 @@
 CMakeFiles/abstractvm.dir/ErrorHandle.cpp.o: ErrorHandle.cpp
 CMakeFiles/abstractvm.dir/ErrorHandle.cpp.o: ErrorHandle.hpp
 
+CMakeFiles/abstractvm.dir/Stackstuff.cpp.o: ErrorHandle.hpp
 CMakeFiles/abstractvm.dir/Stackstuff.cpp.o: IOperand.hpp
 CMakeFiles/abstractvm.dir/Stackstuff.cpp.o: Stackstuff.cpp
 CMakeFiles/abstractvm.dir/Stackstuff.cpp.o: Stackstuff.hpp

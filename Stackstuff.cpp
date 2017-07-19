@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Stackstuff.hpp"
+#include "ErrorHandle.hpp"
 
 Stackstuff::Stackstuff(std::string value )
 		: _value(value) {}
@@ -14,112 +15,148 @@ void    Stackstuff::push(std::string value, eOperandType type) {
 }
 
 void Stackstuff::pop(std::string value, eOperandType type) {
-	if (_stack.size() == 0)
-		throw std::runtime_error("Pop fail!");
-	_stack.pop_front();
+    try {
+        if (_stack.size() == 0)
+            throw ErrorHandle("Error: Can't pop on an empty stack, Pop fail!\n");
+        _stack.pop_front();
+    } catch (ErrorHandle errorHandle) {
+        std::cout << errorHandle.what() << std::endl;
+    }
 }
 
 void Stackstuff::dump(std::string value, eOperandType type) {
-	if (_stack.size() == 0)
-		throw std::runtime_error("Dump fail!");
-	std::list<const IOperand*>::iterator itr;
-	for (itr = _stack.begin(); itr != _stack.end(); ++itr)
-		std::cout << (*itr)->toString() << std::endl;
+    try {
+        if (_stack.size() == 0)
+            throw ErrorHandle("Error: Dump fail!\n");
+        std::list<const IOperand *>::iterator itr;
+        for (itr = _stack.begin(); itr != _stack.end(); ++itr)
+            std::cout << (*itr)->toString() << std::endl;
+    } catch (ErrorHandle errorHandle) {
+        std::cout << errorHandle.what() << std::endl;
+    }
 }
 
 void Stackstuff::assert(std::string value, eOperandType type){
-	if (_stack.size() == 0)
-		throw std::runtime_error("Empty stack! Failed assert");
-	const IOperand* op = *(_stack.begin());
-	if (op->toString() != value)
-		throw std::runtime_error("Different Values! assert failed");
-	if (op->getType() != type)
-		throw std::runtime_error("Wrong type! assert failed!");
+    try {
+        if (_stack.size() == 0)
+            throw ErrorHandle("Error: Empty stack! Failed assert\n");
+        const IOperand *op = *(_stack.begin());
+        if (op->toString() != value)
+            throw ErrorHandle("Error: Different Values! assert failed\n");
+        if (op->getType() != type)
+            throw ErrorHandle("Error: Wrong type! assert failed!\n");
+    } catch (ErrorHandle errorHandle) {
+        std::cout << errorHandle.what() << std::endl;
+    }
 }
 
 void Stackstuff::add(std::string value, eOperandType type) {
-	if (_stack.size() < 2)
-		throw std::runtime_error("stack to small! add error");
-	const IOperand* op1 = *(_stack.begin());
-	_stack.pop_front();
-	const IOperand* op2 = *(_stack.begin());
-	_stack.pop_front();
-	const IOperand* r  = *op1 + *op2;
-	delete op1;
-	delete op2;
-	_stack.push_front(r);
+    try {
+
+        if (_stack.size() < 2)
+		    throw ErrorHandle("Error: stack to small! add error\n");
+	    const IOperand* op1 = *(_stack.begin());
+	    _stack.pop_front();
+	    const IOperand* op2 = *(_stack.begin());
+	    _stack.pop_front();
+	    const IOperand* r  = *op1 + *op2;
+	    delete op1;
+	    delete op2;
+	    _stack.push_front(r);
+    } catch (ErrorHandle errorHandle) {
+        std::cout << errorHandle.what() << std::endl;
+    }
 }
 
 void Stackstuff::sub(std::string value, eOperandType type) {
-	if (_stack.size() < 2)
-		throw std::runtime_error("stack to small! sub error");
-	const IOperand* op1 = *(_stack.begin());
-	_stack.pop_front();
-	const IOperand* op2 = *(_stack.begin());
-	_stack.pop_front();
-	const IOperand* r  = *op2 - *op1;
-	delete op1;
-	delete op2;
-	_stack.push_front(r);
+	try {
+        if (_stack.size() < 2)
+            throw ErrorHandle("Error: stack to small! sub error\n");
+        const IOperand *op1 = *(_stack.begin());
+        _stack.pop_front();
+        const IOperand *op2 = *(_stack.begin());
+        _stack.pop_front();
+        const IOperand *r = *op2 - *op1;
+        delete op1;
+        delete op2;
+        _stack.push_front(r);
+    }  catch (ErrorHandle errorHandle) {
+        std::cout << errorHandle.what() << std::endl;
+    }
 }
 
 void Stackstuff::mul(std::string value, eOperandType type) {
-	if (_stack.size() < 2)
-		throw std::runtime_error("stack to small! mul error");
-	const IOperand* op1 = *(_stack.begin());
-	_stack.pop_front();
-	const IOperand* op2 = *(_stack.begin());
-	_stack.pop_front();
-	const IOperand* r  = *op1 * *op2;
-	delete op1;
-	delete op2;
-	_stack.push_front(r);
+    try {
+        if (_stack.size() < 2)
+            throw ErrorHandle("stack to small! mul error\n");
+        const IOperand *op1 = *(_stack.begin());
+        _stack.pop_front();
+        const IOperand *op2 = *(_stack.begin());
+        _stack.pop_front();
+        const IOperand *r = *op1 * *op2;
+        delete op1;
+        delete op2;
+        _stack.push_front(r);
+    } catch (ErrorHandle errorHandle) {
+        std::cout << errorHandle.what() << std::endl;
+    }
 }
 
 void Stackstuff::div(std::string value, eOperandType type) {
-	if (_stack.size() < 2)
-		throw std::runtime_error("stack to small, div error");
-	const IOperand* op1 = *(_stack.begin());
-	_stack.pop_front();
-	const IOperand* op2 = *(_stack.begin());
-	_stack.pop_front();
-    if (op1->toString() == "0" || op2->toString() == "0"){
-        std::cout << "error trying to divide by 0\n";
-        return ;
+    try {
+        if (_stack.size() < 2)
+            throw ErrorHandle("Error: stack to small, div error\n");
+        const IOperand *op1 = *(_stack.begin());
+        _stack.pop_front();
+        const IOperand *op2 = *(_stack.begin());
+        _stack.pop_front();
+        if (op1->toString() == "0" || op2->toString() == "0") {
+            throw ErrorHandle("Error: trying to divide by 0\n");
+        }
+        const IOperand *r = *op2 / *op1;
+        delete op1;
+        delete op2;
+        _stack.push_front(r);
+    } catch (ErrorHandle errorHandle) {
+        std::cout << errorHandle.what() << std::endl;
     }
-
-	const IOperand* r  = *op2 / *op1;
-	delete op1;
-	delete op2;
-	_stack.push_front(r);
 }
 
 void Stackstuff::mod(std::string value, eOperandType type) {
-	if (_stack.size() < 2)
-		throw std::runtime_error("stack to small mod error");
-	const IOperand* op1 = *(_stack.begin());
-	_stack.pop_front();
-	const IOperand* op2 = *(_stack.begin());
-	_stack.pop_front();
-	const IOperand* r  = *op2 % *op1;
-	delete op1;
-	delete op2;
-	_stack.push_front(r);
+	try {
+        if (_stack.size() < 2)
+            throw ErrorHandle("Error: stack to small, mod error\n");
+        const IOperand *op1 = *(_stack.begin());
+        _stack.pop_front();
+        const IOperand *op2 = *(_stack.begin());
+        _stack.pop_front();
+        if (op1->toString() == "0" || op2->toString() == "0") {
+            throw ErrorHandle("Error: trying to mod by 0\n");
+        }
+        const IOperand *r = *op2 % *op1;
+        delete op1;
+        delete op2;
+        _stack.push_front(r);
+    } catch (ErrorHandle errorHandle) {
+        std::cout << errorHandle.what() << std::endl;
+    }
 }
 
 void Stackstuff::print(std::string value, eOperandType type) {
-	if (_stack.size() == 0)
-		throw std::runtime_error("can't print empty stack");
-	const IOperand* op1 = *(_stack.begin());
-	if (op1->getType() != int8)
-		throw std::runtime_error("Print instruction on no 8-bit integer");
-	std::cout << static_cast<char>(std::stoi(op1->toString())) << std::endl;
+	try {
+        if (_stack.size() == 0)
+            throw ErrorHandle("Error: empty stack, print\n");
+        const IOperand *op1 = *(_stack.begin());
+        if (op1->getType() != int8)
+            throw ErrorHandle("Error: Can only print 8-bit int\n");
+        std::cout << static_cast<char>(std::stoi(op1->toString())) << std::endl;
+    } catch (ErrorHandle errorHandle) {
+        std::cout << errorHandle.what() << std::endl;
+    }
 }
 
 void Stackstuff::exit(std::string value, eOperandType type) {
 	std::exit(0);
 }
-
-void    Stackstuff::end(std::string value, eOperandType type){}
 
 Stackstuff::~Stackstuff() {}

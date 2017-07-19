@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
         for (unsigned int i = 0; i < sCommands.size(); i++) {
             if (sCommands.at(i) == ";;") {
                 if (!sEnd)
-                    std::cout << "no exit command called before end of program! \n";
+                    throw ErrorHandle("Error: No exit command called before end of program! \n");
                 break;
             } else if (sCommands.at(i)[0] == ';' && sCommands.at(i)[1] != ';')
                 continue;
@@ -109,9 +109,9 @@ int main(int argc, char **argv) {
             } else if (std::strncmp(sCommands.at(i).c_str(), "exit", 4) == 0 && sCommands.at(i).length() == 4) {
                 sEnd = true;
             } else
-                std::cout << "command: " << i << " is incorrect input\n";
+                throw ErrorHandle("Error: instruction Unknown\n");
         }
-    } catch (ErrorHandle errorHandle) {
+    } catch (ErrorHandle &errorHandle) {
         std::cout << errorHandle.what() << std::endl;
     }
     return 0;
