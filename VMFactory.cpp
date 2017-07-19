@@ -13,9 +13,6 @@ VMFactory::VMFactory() {
     createOpp[Double] = &VMFactory::createDouble;
 }
 
-//VMFactory::VMFactory(const VMFactory &) {}
-//const VMFactory &VMFactory::operator=(const VMFactory &) {}
-
 IOperand const *VMFactory::createOperand(eOperandType type, std::string const &value) const {
     IOperand const *(VMFactory::*fCreate)(std::string const &value) const;
     fCreate = createOpp.at(type);

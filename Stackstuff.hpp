@@ -38,8 +38,6 @@ public:
 	void    exit(std::string value, eOperandType type);
 
 	~Stackstuff();
-
-
 };
 
 

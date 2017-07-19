@@ -29,8 +29,6 @@ const Stackstuff& Stackstuff::operator=(const Stackstuff &rhs) {
 
 Stackstuff::~Stackstuff(){}
 
-
-
 void    Stackstuff::push(std::string value, eOperandType type) {
 	_type = type;
 	_stack.push_front(_factory.createOperand(type, value));

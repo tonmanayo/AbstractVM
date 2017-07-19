@@ -26,16 +26,23 @@ int main(int argc, char **argv) {
 	}
 
 	while(1) {
-		if (argc == 1) {
-			getline(std::cin, input);
-			sCommands.push_back(input);
-		}
-		else if (argc == 2) {
-			getline(myfile, input);
-			sCommands.push_back(input);
-		}
-		if (input == ";;" )
-			break ;
+        try {
+            if (argc == 1) {
+                getline(std::cin, input);
+                sCommands.push_back(input);
+                if (input == ";;")
+                    break;
+            } else if (argc == 2) {
+                getline(myfile, input);
+                sCommands.push_back(input);
+                if (input == "exit")
+                    break;
+            } else
+                throw ErrorHandle("Invalid amount of arguments\n");
+        } catch (ErrorHandle errorHandle) {
+            std::cout << errorHandle.what() << std::endl;
+            break ;
+        }
 	}
     try {
         for (unsigned int i = 0; i < sCommands.size(); i++) {
