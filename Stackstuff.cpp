@@ -6,8 +6,30 @@
 #include "Stackstuff.hpp"
 #include "ErrorHandle.hpp"
 
+Stackstuff::Stackstuff()
+        : _value("0") {}
+
 Stackstuff::Stackstuff(std::string value )
-		: _value(value) {}
+        : _value(value) {}
+
+Stackstuff::Stackstuff(Stackstuff const &rhs ) {
+    _stack = rhs._stack;
+    _factory = rhs._factory;
+    _type = rhs._type;
+    _value = rhs._value;
+}
+
+const Stackstuff& Stackstuff::operator=(const Stackstuff &rhs) {
+    _value = rhs._value;
+    _type = rhs._type;
+    _factory = rhs._factory;
+    _stack = rhs._stack;
+    return *this;
+}
+
+Stackstuff::~Stackstuff(){}
+
+
 
 void    Stackstuff::push(std::string value, eOperandType type) {
 	_type = type;
@@ -15,6 +37,8 @@ void    Stackstuff::push(std::string value, eOperandType type) {
 }
 
 void Stackstuff::pop(std::string value, eOperandType type) {
+    (void)value;
+    (void)type;
     try {
         if (_stack.size() == 0)
             throw ErrorHandle("Error: Can't pop on an empty stack, Pop fail!\n");
@@ -25,6 +49,8 @@ void Stackstuff::pop(std::string value, eOperandType type) {
 }
 
 void Stackstuff::dump(std::string value, eOperandType type) {
+    (void)value;
+    (void)type;
     try {
         if (_stack.size() == 0)
             throw ErrorHandle("Error: Dump fail!\n");
@@ -51,6 +77,8 @@ void Stackstuff::assert(std::string value, eOperandType type){
 }
 
 void Stackstuff::add(std::string value, eOperandType type) {
+    (void)value;
+    (void)type;
     try {
 
         if (_stack.size() < 2)
@@ -69,7 +97,9 @@ void Stackstuff::add(std::string value, eOperandType type) {
 }
 
 void Stackstuff::sub(std::string value, eOperandType type) {
-	try {
+    (void)value;
+    (void)type;
+    try {
         if (_stack.size() < 2)
             throw ErrorHandle("Error: stack to small! sub error\n");
         const IOperand *op1 = *(_stack.begin());
@@ -86,6 +116,8 @@ void Stackstuff::sub(std::string value, eOperandType type) {
 }
 
 void Stackstuff::mul(std::string value, eOperandType type) {
+    (void)value;
+    (void)type;
     try {
         if (_stack.size() < 2)
             throw ErrorHandle("stack to small! mul error\n");
@@ -103,6 +135,8 @@ void Stackstuff::mul(std::string value, eOperandType type) {
 }
 
 void Stackstuff::div(std::string value, eOperandType type) {
+    (void)value;
+    (void)type;
     try {
         if (_stack.size() < 2)
             throw ErrorHandle("Error: stack to small, div error\n");
@@ -123,7 +157,9 @@ void Stackstuff::div(std::string value, eOperandType type) {
 }
 
 void Stackstuff::mod(std::string value, eOperandType type) {
-	try {
+    (void)value;
+    (void)type;
+    try {
         if (_stack.size() < 2)
             throw ErrorHandle("Error: stack to small, mod error\n");
         const IOperand *op1 = *(_stack.begin());
@@ -143,7 +179,9 @@ void Stackstuff::mod(std::string value, eOperandType type) {
 }
 
 void Stackstuff::print(std::string value, eOperandType type) {
-	try {
+    (void)value;
+    (void)type;
+    try {
         if (_stack.size() == 0)
             throw ErrorHandle("Error: empty stack, print\n");
         const IOperand *op1 = *(_stack.begin());
@@ -156,7 +194,10 @@ void Stackstuff::print(std::string value, eOperandType type) {
 }
 
 void Stackstuff::exit(std::string value, eOperandType type) {
+    (void)value;
+    (void)type;
 	std::exit(0);
 }
 
-Stackstuff::~Stackstuff() {}
+
+

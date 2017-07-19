@@ -16,16 +16,14 @@ class Stackstuff {
 private:
 	std::string                                     _value;
 	std::list<const IOperand*>                      _stack;
-	//std::map<int, void(Stackstuff::*)(std::string, eOperandType)> _operations;
 	VMFactory                                       _factory;
 	eOperandType                                    _type;
 
 public:
 	Stackstuff();
-	Stackstuff(const Stackstuff&);
-	const Stackstuff& operator=(const Stackstuff&);
-	Stackstuff(std::string);
-	//void    run();
+    Stackstuff(std::string);
+    Stackstuff(const Stackstuff &rhs);
+	const Stackstuff& operator=(const Stackstuff &rhs);
 
 	void    push(std::string value, eOperandType type);
 	void    pop(std::string value, eOperandType type);

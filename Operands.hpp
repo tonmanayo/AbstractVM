@@ -29,8 +29,20 @@ private:
 public:
 
     Operands() {}
-    Operands(const Operands& rhs) {}
-    const Operands&operator=(const Operands&);
+    Operands(const Operands &rhs) {
+        _value = rhs._value;
+        _factory = rhs._value;
+        _type = rhs._type;
+        _precision = rhs._precision;
+    }
+
+    const Operands&operator=(const Operands &rhs) {
+        _value = rhs._value;
+        _factory = rhs._value;
+        _type = rhs._type;
+        _precision = rhs._precision;
+        return *this;
+    }
 
     template <typename C>
     bool checkTypeOverflow(C val, eOperandType type) const {
