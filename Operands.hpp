@@ -106,10 +106,13 @@ public:
                 c_out << std::setprecision(precision) << nVal;
                 _string = c_out.str();
             }
-        } catch (std::out_of_range range) {
+        } catch (std::out_of_range &range) {
             std::cout << range.what();
         } catch (ErrorHandle &errorHandle) {
             std::cout << errorHandle.what() << std::endl;
+        } catch (std::invalid_argument &argument) {
+           std::cout << "Error: Enter " << argument.what() << std::endl;
+            return ;
         }
     }
 

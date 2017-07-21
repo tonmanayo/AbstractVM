@@ -51,7 +51,7 @@ void Stackstuff::dump(std::string value, eOperandType type) {
     (void)value;
     (void)type;
     try {
-        if (_stack.size() == 0)
+        if (_stack.empty())
             throw ErrorHandle("Error: Dump fail!\n");
         std::list<const IOperand *>::iterator itr;
         for (itr = _stack.begin(); itr != _stack.end(); ++itr)

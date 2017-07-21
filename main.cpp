@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
                 if (!sEnd)
                     throw ErrorHandle("Error: No exit command called before end of program! \n");
                 break;
-            } if (sCommands.at(i)[0] == ';' && sCommands.at(i)[1] != ';')
+            } if ((sCommands.at(i)[0] == ';' && sCommands.at(i)[1] != ';' ) || sCommands.at(i)[0] == '\0' || sCommands.at(i)[0] == '\n' || sCommands.at(i) == " "  )
                 continue;
             if (std::strncmp(sCommands.at(i).c_str(), "push int8(", 10) == 0) {
                 stackstuff.push(sCommands.at(i).substr(sCommands.at(i).find('(') + 1, sCommands.at(i).find(')') - 1),

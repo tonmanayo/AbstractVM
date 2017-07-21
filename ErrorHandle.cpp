@@ -15,6 +15,6 @@ ErrorHandle::ErrorHandle(const std::string &message) : _message(message) {
 
 ErrorHandle::~ErrorHandle() {}
 
-const char *ErrorHandle::what() const throw() override {
+const char *ErrorHandle::what() const throw() {
     return _message.c_str();
 }
