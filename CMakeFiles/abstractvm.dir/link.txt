@@ -1,1 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -Wall -Werror -Wextra -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/abstractvm.dir/main.cpp.o CMakeFiles/abstractvm.dir/VMFactory.cpp.o CMakeFiles/abstractvm.dir/Stackstuff.cpp.o CMakeFiles/abstractvm.dir/ErrorHandle.cpp.o  -o abstractvm 
