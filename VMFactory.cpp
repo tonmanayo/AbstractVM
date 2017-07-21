@@ -41,7 +41,7 @@ IOperand const *VMFactory::createDouble(std::string const &value) const {
 
 VMFactory::~VMFactory() {}
 
-const VMFactory &VMFactory::operator=(const VMFactory &rhs) {
+VMFactory &VMFactory::operator=(const VMFactory &rhs) {
     createOpp = rhs.createOpp;
     return *this;
 }

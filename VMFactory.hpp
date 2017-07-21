@@ -22,7 +22,7 @@ private:
 public:
     VMFactory();
     VMFactory(const VMFactory&);
-    const VMFactory& operator=(const VMFactory&);
+    VMFactory& operator=(const VMFactory&);
     IOperand const *createOperand(eOperandType type, std::string const &value) const;
     ~VMFactory();
 };

@@ -21,9 +21,9 @@ private:
 
 public:
 	Stackstuff();
-    Stackstuff(std::string);
+	Stackstuff(std::string);
     Stackstuff(const Stackstuff &rhs);
-	const Stackstuff& operator=(const Stackstuff &rhs);
+	Stackstuff& operator=(const Stackstuff &rhs);
 
 	void    push(std::string value, eOperandType type);
 	void    pop(std::string value, eOperandType type);

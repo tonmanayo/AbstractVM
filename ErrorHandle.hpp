@@ -15,7 +15,7 @@ public:
     explicit ErrorHandle(const std::string& message);
     virtual ~ErrorHandle();
 
-    virtual const char* what() const throw();
+    const char* what() const throw() override ;
 private:
     std::string _message;
 };
