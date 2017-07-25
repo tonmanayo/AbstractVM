@@ -67,19 +67,19 @@ int main(int argc, char **argv) {
             } else if (std::strncmp(sCommands.at(i).c_str(), "push double(", 12) == 0) {
                 stackstuff.push(sCommands.at(i).substr(sCommands.at(i).find('(') + 1, sCommands.at(i).find(')') - 1),
                                 Double);
-            } else if (std::strncmp(sCommands.at(i).c_str(), "pop", 3) == 0 && sCommands.at(i).length() == 3) {
+            } else if (std::strncmp(sCommands.at(i).c_str(), "pop", 3) == 0) {
                 stackstuff.pop("", int8);
-            } else if (std::strncmp(sCommands.at(i).c_str(), "dump", 4) == 0 && sCommands.at(i).length() == 4) {
+            } else if (std::strncmp(sCommands.at(i).c_str(), "dump", 4) == 0) {
                 stackstuff.dump("", int8);
-            } else if (std::strncmp(sCommands.at(i).c_str(), "mul", 3) == 0 && sCommands.at(i).length() == 3) {
+            } else if (std::strncmp(sCommands.at(i).c_str(), "mul", 3) == 0) {
                 stackstuff.mul("", int8);
-            } else if (std::strncmp(sCommands.at(i).c_str(), "sub", 3) == 0 && sCommands.at(i).length() == 3) {
+            } else if (std::strncmp(sCommands.at(i).c_str(), "sub", 3) == 0) {
                 stackstuff.sub("", int8);
-            } else if (std::strncmp(sCommands.at(i).c_str(), "add", 3) == 0 && sCommands.at(i).length() == 3) {
+            } else if (std::strncmp(sCommands.at(i).c_str(), "add", 3) == 0) {
                 stackstuff.add("", int8);
-            } else if (std::strncmp(sCommands.at(i).c_str(), "div", 3) == 0 && sCommands.at(i).length() == 3) {
+            } else if (std::strncmp(sCommands.at(i).c_str(), "div", 3) == 0) {
                 stackstuff.div("", int8);
-            } else if (std::strncmp(sCommands.at(i).c_str(), "mod", 3) == 0 && sCommands.at(i).length() == 3) {
+            } else if (std::strncmp(sCommands.at(i).c_str(), "mod", 3) == 0 ) {
                 stackstuff.mod("", int8);
             } else if (std::strncmp(sCommands.at(i).c_str(), "print", 5) == 0 && sCommands.at(i).length() == 5) {
                 stackstuff.print("", int8);
